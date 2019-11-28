@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Scenes/Spatial.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Player.gd" type="Script" id=2]
@@ -20,6 +20,51 @@ extents = Vector3( 0.5, 0.2, 0.5 )
 
 [sub_resource type="CubeMesh" id=6]
 size = Vector3( 5, 5, 2 )
+
+[sub_resource type="SpatialMaterial" id=7]
+albedo_color = Color( 1, 0, 0, 1 )
+
+[sub_resource type="CubeMesh" id=8]
+material = SubResource( 7 )
+size = Vector3( 0.1, 0.5, 0.1 )
+
+[sub_resource type="SpatialMaterial" id=9]
+albedo_color = Color( 1, 0, 0, 1 )
+
+[sub_resource type="CylinderMesh" id=10]
+material = SubResource( 9 )
+top_radius = 0.3
+bottom_radius = 0.3
+height = 0.1
+
+[sub_resource type="CylinderMesh" id=11]
+top_radius = 0.1
+bottom_radius = 0.1
+height = 0.1
+
+[sub_resource type="SpatialMaterial" id=12]
+albedo_color = Color( 1, 0.219608, 0.219608, 1 )
+
+[sub_resource type="CylinderMesh" id=13]
+material = SubResource( 12 )
+top_radius = 0.5
+bottom_radius = 0.1
+height = 0.1
+
+[sub_resource type="SpatialMaterial" id=14]
+albedo_color = Color( 0.945098, 0.0392157, 0.0392157, 1 )
+
+[sub_resource type="CubeMesh" id=15]
+material = SubResource( 14 )
+size = Vector3( 0.3, 0.5, 0.1 )
+
+[sub_resource type="SpatialMaterial" id=16]
+albedo_color = Color( 0.905882, 0, 0, 1 )
+
+[sub_resource type="SphereMesh" id=17]
+material = SubResource( 16 )
+radius = 0.1
+height = 0.1
 
 [node name="Spatial" type="Spatial"]
 script = ExtResource( 1 )
@@ -191,6 +236,106 @@ shape = SubResource( 5 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7102, 0 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 28 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0529848, 0.740716, 28.001 )
 mesh = SubResource( 6 )
+material/0 = null
+
+[node name="MeshInstance" type="MeshInstance" parent="MeshInstance"]
+transform = Transform( 0.866025, -0.5, 0, 0.5, 0.866025, 0, 0, 0, 1, 1.06976, 1.54009, -1.11408 )
+mesh = SubResource( 8 )
+material/0 = null
+
+[node name="MeshInstance3" type="MeshInstance" parent="MeshInstance"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.17184, 1.218, -1.10231 )
+mesh = SubResource( 8 )
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="MeshInstance"]
+transform = Transform( 0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0, 1, 1.28076, 1.54009, -1.11408 )
+mesh = SubResource( 8 )
+material/0 = null
+
+[node name="MeshInstance4" type="MeshInstance" parent="MeshInstance"]
+transform = Transform( 1, 0, -4.37114e-008, -4.37114e-008, 1.91069e-015, -1, 0, 1, 1.91069e-015, 0.185117, 1.30857, -0.979521 )
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="MeshInstance" type="MeshInstance" parent="MeshInstance/MeshInstance4"]
+transform = Transform( 1, 0, 1.59578e-037, 0, 1, 0, 0, 0, 1, 0.0164277, -0.0250244, -0.017089 )
+mesh = SubResource( 11 )
+material/0 = null
+
+[node name="MeshInstance5" type="MeshInstance" parent="MeshInstance"]
+transform = Transform( 1, 0, 0, 0, -0.642788, -0.766044, 0, 0.766044, -0.642788, -0.900651, 1.34963, -0.848314 )
+mesh = SubResource( 13 )
+material/0 = null
+
+[node name="MeshInstance6" type="MeshInstance" parent="MeshInstance"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.65966, 1.3291, -0.974453 )
+mesh = SubResource( 15 )
+material/0 = null
+
+[node name="MeshInstance7" type="MeshInstance" parent="MeshInstance"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.13994, 1.33577, -0.976612 )
+mesh = SubResource( 15 )
+material/0 = null
+
+[node name="MeshInstance8" type="MeshInstance" parent="MeshInstance"]
+transform = Transform( 0.866025, -0.5, 0, 0.5, 0.866025, 0, 0, 0, 1, 0.623656, 0.188141, -1.23833 )
+mesh = SubResource( 8 )
+material/0 = null
+
+[node name="MeshInstance9" type="MeshInstance" parent="MeshInstance"]
+transform = Transform( 0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0, 1, 0.849992, 0.188141, -1.23833 )
+mesh = SubResource( 8 )
+material/0 = null
+
+[node name="MeshInstance10" type="MeshInstance" parent="MeshInstance"]
+transform = Transform( 0.866025, -0.5, 0, 0.5, 0.866025, 0, 0, 0, 1, 1.0727, 0.188141, -1.23833 )
+mesh = SubResource( 8 )
+material/0 = null
+
+[node name="MeshInstance11" type="MeshInstance" parent="MeshInstance"]
+transform = Transform( 0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0, 1, 1.2925, 0.188141, -1.23833 )
+mesh = SubResource( 8 )
+material/0 = null
+
+[node name="MeshInstance12" type="MeshInstance" parent="MeshInstance"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00642407, 0.188141, -1.23833 )
+mesh = SubResource( 8 )
+material/0 = null
+
+[node name="MeshInstance13" type="MeshInstance" parent="MeshInstance"]
+transform = Transform( -4.37114e-008, -1, 0, 1, -4.37114e-008, 0, 0, 0, 1, 4.32134e-005, -0.0443168, -1.23833 )
+mesh = SubResource( 8 )
+material/0 = null
+
+[node name="MeshInstance14" type="MeshInstance" parent="MeshInstance"]
+transform = Transform( -4.37114e-008, -1, 0, 1, -4.37114e-008, 0, 0, 0, 1, 0.00521654, 0.384022, -1.21345 )
+mesh = SubResource( 8 )
+material/0 = null
+
+[node name="MeshInstance15" type="MeshInstance" parent="MeshInstance"]
+transform = Transform( 0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0, 1, -0.874876, 0.188141, -1.23833 )
+mesh = SubResource( 8 )
+material/0 = null
+
+[node name="MeshInstance16" type="MeshInstance" parent="MeshInstance"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.735673, 0.177943, -1.25744 )
+mesh = SubResource( 8 )
+material/0 = null
+
+[node name="MeshInstance17" type="MeshInstance" parent="MeshInstance"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.00723, 0.188141, -1.23833 )
+mesh = SubResource( 8 )
+material/0 = null
+
+[node name="MeshInstance18" type="MeshInstance" parent="MeshInstance"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.51161, 0.264448, -1.23344 )
+mesh = SubResource( 8 )
+material/0 = null
+
+[node name="MeshInstance19" type="MeshInstance" parent="MeshInstance"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.49156, -0.0651512, -1.30416 )
+mesh = SubResource( 17 )
 material/0 = null
